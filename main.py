@@ -50,7 +50,7 @@ def post_news(query):
     except Exception as e:
         print(f"Error: {e}")
 
-topics = ["Latest India news updates", "Technology news 2026 India"]
+topics = ["Latest India news updates", "Entertainment news India"]
 
 for t in topics:
     post_news(t)
