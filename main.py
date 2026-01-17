@@ -1,3 +1,5 @@
+EMAIL = "abdulkhalid50a@gmail.com"
+BLOG_ID = "7285063762246613773"
 import os
 import smtplib
 import time
