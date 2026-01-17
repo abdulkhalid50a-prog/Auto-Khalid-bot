@@ -1,0 +1,3 @@
+duckduckgo-search
+langchain-community
+groq
