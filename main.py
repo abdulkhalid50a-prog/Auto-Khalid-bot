@@ -37,23 +37,4 @@ def post_news(query):
         <div style="font-family:sans-serif; border:1px solid #ddd; padding:15px; border-radius:10px;">
             <img src="{img_url}" width="100%" style="border-radius:10px;">
             <h1 style="color:#e74c3c;">{title}</h1>
-            <div style="font-size:18px; line-height:1.6;">{body}</div>
-            <p style="color:gray; font-size:12px;">Auto-posted by Khalid AI Bot</p>
-        </div>
-        """
-        
-        msg = MIMEText(html, 'html')
-        msg['Subject'] = title
-        msg['From'] = M_EMAIL
-        msg['To'] = B_EMAIL
-
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(M_EMAIL, A_PASS)
-            server.sendmail(M_EMAIL, B_EMAIL, msg.as_string())
-        print(f"Success: {title}")
-    except Exception as e:
-        print(f"Error: {e}")
-
-for t in topics:
-    post_news(t)
-    time.sleep(30)
+            <div style
