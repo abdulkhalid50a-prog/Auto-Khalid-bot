@@ -1,0 +1,23 @@
+name: 4 Hour Auto Post
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install
+        run: pip install langchain_groq langchain_community duckduckgo-search
+      - name: Execute
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          B_EMAIL: ${{ secrets.B_EMAIL }}
+          M_EMAIL: ${{ secrets.M_EMAIL }}
+          A_PASS: ${{ secrets.A_PASS }}
+        run: python main.py
